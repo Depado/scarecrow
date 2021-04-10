@@ -17,8 +17,13 @@ type LogConf struct {
 	Caller bool   `mapstructure:"caller"`
 }
 
+type ChiaConf struct {
+	Network string `mapstructure:"network"`
+}
+
 type Conf struct {
-	Log LogConf `mapstructure:"log"`
+	Log  LogConf  `mapstructure:"log"`
+	Chia ChiaConf `mapstructure:"chia"`
 }
 
 // NewLogger will return a new logger
@@ -60,7 +65,7 @@ func NewLogger(c *Conf) zerolog.Logger {
 func NewConf() (*Conf, error) {
 	// Environment variables
 	viper.AutomaticEnv()
-	viper.SetEnvPrefix("vuemonit")
+	viper.SetEnvPrefix("scarecrow")
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 
 	// Configuration file

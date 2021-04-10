@@ -4,8 +4,9 @@ export GO111MODULE=on
 export CGO_ENABLED=0
 export VERSION=$(shell git describe --abbrev=0 --tags 2> /dev/null || echo "0.1.0")
 export BUILD=$(shell git rev-parse HEAD 2> /dev/null || echo "undefined")
+export BUILDDATE=$(shell LANG=en_us_88591 date)
 BINARY=scarecrow
-LDFLAGS=-ldflags "-X main.Version=$(VERSION) -X main.Build=$(BUILD) -s -w"
+LDFLAGS=-ldflags "-X 'github.com/Depado/scarecrow/cmd.Version=$(VERSION)' -X 'github.com/Depado/scarecrow/cmd.Build=$(BUILD)' -X 'github.com/Depado/scarecrow/cmd.Time=$(BUILDDATE)' -s -w"
 
 .PHONY: help
 help:
@@ -15,15 +16,17 @@ help:
 build: ## Build
 	go build $(LDFLAGS) -o $(BINARY)
 
+.PHONY: tmp
+tmp: ## Build and output the binary in /tmp
+	go build $(LDFLAGS) -o /tmp/$(BINARY)
+
 .PHONY: compressed
 compressed: build
 	upx --brute $(BINARY)
 
 .PHONY: docker
 docker: ## Build the docker image
-	docker build -t $(BINARY):latest -t $(BINARY):$(BUILD) \
-		--build-arg build=$(BUILD) --build-arg version=$(VERSION) \
-		-f Dockerfile .
+	docker build -t $(BINARY):latest -t $(BINARY):$(BUILD) -f Dockerfile .
 
 .PHONY: release
 release: ## Create a new release on Github

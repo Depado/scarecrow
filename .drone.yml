@@ -15,7 +15,7 @@ steps:
       - name: deps
         path: /go
     commands:
-      - make build-noproto
+      - make
 
   - name: linter
     image: golang:latest
@@ -33,7 +33,7 @@ steps:
       username: depado
       password:
         from_secret: ghcr_pat
-      repo: ghcr.io/depado/capybara
+      repo: ghcr.io/depado/scarecrow
       registry: ghcr.io
       tags:
         - latest
@@ -51,7 +51,7 @@ steps:
       username: depado
       password:
         from_secret: ghcr_pat
-      repo: ghcr.io/depado/capybara
+      repo: ghcr.io/depado/scarecrow
       registry: ghcr.io
       tags:
         - latest
