@@ -3,7 +3,7 @@
 
   ![Go Version](https://img.shields.io/badge/Go%20Version-latest-brightgreen.svg)
   [![Go Report Card](https://goreportcard.com/badge/github.com/Depado/scarecrow)](https://goreportcard.com/report/github.com/Depado/scarecrow)
-  [![Build Status](https://drone.depado.eu/api/badges/Depado/scarecrow/status.svg)](https://drone.depado.eu/Depado/scarecrow)
+  [![Build Status](https://drone.depa.do/api/badges/Depado/scarecrow/status.svg)](https://drone.depa.do/Depado/scarecrow)  
   [![codecov](https://codecov.io/gh/Depado/scarecrow/branch/master/graph/badge.svg)](https://codecov.io/gh/Depado/scarecrow)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Depado/scarecrow/blob/main/LICENSE)
   [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/Depado)
