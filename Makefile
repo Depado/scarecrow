@@ -22,7 +22,7 @@ tmp: ## Build and output the binary in /tmp
 
 .PHONY: compressed
 compressed: build
-	upx --brute $(BINARY)
+	upx --best --lzma $(BINARY)
 
 .PHONY: docker
 docker: ## Build the docker image

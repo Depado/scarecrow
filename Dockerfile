@@ -1,5 +1,5 @@
 # Build Step
-FROM golang:1.16.2-alpine3.13 AS builder
+FROM golang:1.19-alpine AS builder
 
 # Dependencies
 RUN apk update && apk add --no-cache upx make git
@@ -13,7 +13,7 @@ COPY . .
 
 # Build
 RUN make tmp
-RUN upx /tmp/scarecrow
+RUN upx --best --lzma /tmp/scarecrow
 
 
 # Final Step
