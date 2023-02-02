@@ -1,6 +1,6 @@
 module github.com/Depado/scarecrow
 
-go 1.19
+go 1.20
 
 require (
 	github.com/gdamore/tcell/v2 v2.5.4
