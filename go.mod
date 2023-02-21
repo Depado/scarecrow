@@ -8,7 +8,7 @@ require (
 	github.com/shirou/gopsutil/v3 v3.23.1
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.15.0
-	go.uber.org/fx v1.19.1
+	go.uber.org/fx v1.19.2
 )
 
 require (
