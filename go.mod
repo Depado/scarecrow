@@ -6,7 +6,7 @@ require (
 	github.com/gdamore/tcell/v2 v2.6.0
 	github.com/rs/zerolog v1.29.0
 	github.com/shirou/gopsutil/v3 v3.23.3
-	github.com/spf13/cobra v1.6.1
+	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.15.0
 	go.uber.org/fx v1.19.2
 )
